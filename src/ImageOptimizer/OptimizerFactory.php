@@ -131,7 +131,7 @@ class OptimizerFactory
     private function executable($name)
     {
         $executableFinder = $this->executableFinder;
-        return $this->option($name.'_bin', function() use($name, $executableFinder){
+        return $this->option($name.'_bin', function() use ($name, $executableFinder, ["/usr/bin"]) {
             return $executableFinder->find($name, $name);
         });
     }
